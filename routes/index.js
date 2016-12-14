@@ -1,0 +1,11 @@
+module.exports=fucntion(app){
+	app.get('/',function(req,res){
+		res.redirect('/posts');
+	});
+	//防止用户没有输入主页，直接跳转到posts，为主页
+	app.get('/signup',require('./signip'));
+	app.get('/signin',require('./signin'));
+	app.get('/signout',require('./signout'));
+	app.get('/posts',require('./posts'));
+	//四个子页面的跳转，主页为posts
+};
