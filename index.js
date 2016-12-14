@@ -28,8 +28,13 @@ app.use(session({
 }));
 //session中间件
 
-app.user(flash());
+app.use(flash());
 //flash中间件
+
+app.use(require('express-formidable'))({
+	uploadDir:path.join(__dirname,'./public/img'),//原文档存在问题
+	keepExtensions:true//保留后缀
+});
 
 routes(app);
 //路由
